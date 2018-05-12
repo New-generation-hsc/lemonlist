@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TodoList</title>
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+</head>
+
+<body>
+    <div class="window">
+        <div class="header">
+            <div class="header-container">
+                <div class="logo float-left">
+                    <a href="#">
+						<i class="fa fa-envira color-white logo-icon" aria-hidden="true"></i>
+					</a>
+                </div>
+                <div class="top-icons float-right">
+                    <span class="add-task">
+                    	<i class="fa fa-plus color-white"></i>
+                    </span>
+                    <span class="complete">
+                    	<i class="fa fa-diamond color-white"></i>
+                    </span>
+                    <span class="remind">
+                    	<i class="fa fa-bell color-white"></i>
+                    </span>
+                    <span class="setting">
+                    	<i class="fa fa-gear  fa-fw color-white"></i>
+                    </span>
+                </div>
+                <div class="search">
+                	<div class="search-wrapper">
+                		<span class="search-icon"><i class="fa fa-search place-icon"></i></span>
+                		<input type="text" name="search" placeholder="快速查找">
+                	</div>
+                </div>
+            </div>
+        </div>
+        <div class="main-body">
+            <div class="left-menu">
+                <div class="list-menu">
+                    <div class="tasks-manager">
+                        <div class="all-task">
+                            <span><i class="fa fa-inbox"></i></span>
+                            <span class="task-text">收件箱</span>
+                        </div>
+                        <div class="today-task">
+                            <span><i class="fa fa-calendar-check-o"></i></span>
+                            <span class="task-text">今天</span>
+                        </div>
+                        <div class="future-task">
+                            <span><i class="fa fa-calendar"></i></span>
+                            <span class="task-text">未来7天</span>
+                        </div>
+                    </div>
+                    <div class="tags-manager">
+                        <div class="project">
+                            <span class="project-add"><i class="fa fa-plus"></i></span>
+                            <a href="#page_detail" data-toggle="collapse" aria-expanded="false">项目</a>
+                            
+                            <ul class="collapse" id="page_detail">
+                                <li>
+                                    <div class="single-project">
+                                        <span class="circle"></span>
+                                        <span class="text">个人</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="single-project">
+                                        <span class="circle color-red"></span>
+                                        <span class="text">购物</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="single-project">
+                                        <span class="circle color-blue"></span>
+                                        <span class="text">工作</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="single-project">
+                                        <span class="circle color-cyan"></span>
+                                        <span class="text">杂项</span>
+                                    </div>
+                                </li>
+                            </ul>    
+                        </div>
+                        <div class="tags">
+                            <span class="tag-add"><i class="fa fa-plus"></i></span>
+                            <a href="#tag_detail" data-toggle="collapse" aria-expanded="false">标签</a>
+                            
+                            <ul class="collapse" id="tag_detail">
+                            </ul> 
+                        </div>
+                        <div class="filter">
+                            <span class="filter-add"><i class="fa fa-plus"></i></span>
+                            <a href="#filter_detail" data-toggle="collapse" aria-expanded="false">过滤</a>
+                            
+                            <ul class="collapse" id="filter_detail">
+                                <li>
+                                    <div class="single-project">
+                                        <span class="fa fa-tint tint-red"></span>
+                                        <span class="text">优先级1</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="single-project">
+                                        <span class="fa fa-tint tint-blue"></span>
+                                        <span class="text">优先级2</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="single-project">
+                                        <span class="fa fa-tint tint-yellow"></span>
+                                        <span class="text">优先级3</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="single-project">
+                                        <span class="fa fa-tint tint-orange"></span>
+                                        <span class="text">优先级4</span>
+                                    </div>
+                                </li>
+                            </ul> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="page-slide">
+                    <div class="theme-slide">
+                        <ul id="list_theme">
+                            <li class="active"><img src="images/theme/theme1.png" class="theme-img"></li>
+                            <li><img src="images/theme/theme2.png" class="theme-img"></li>
+                            <li><img src="images/theme/theme3.png" class="theme-img"></li>
+                            <li><img src="images/theme/theme4.png" class="theme-img"></li>
+                        </ul>
+                    </div>
+                    <div class="circle-nav">
+                        <ul>
+                            <li><span class="theme-circle color-cyan active"></span></li>
+                            <li><span class="theme-circle color-blue"></span></li>
+                            <li><span class="theme-circle color-red"></span></li>
+                            <li><span class="theme-circle"></span></li>
+                        </ul>      
+                    </div>
+                </div>
+                <div class="editor"></div>
+            </div>
+        </div>
+        <div class="footer">
+            
+        </div>
+    </div>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Custom Js -->
+    <script type="text/javascript" src="js/home.js"></script>
+</body>
+
+</html>
