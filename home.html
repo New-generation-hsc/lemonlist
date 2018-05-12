@@ -14,28 +14,28 @@
             <div class="header-container">
                 <div class="logo float-left">
                     <a href="#">
-						<i class="fa fa-envira color-white logo-icon" aria-hidden="true"></i>
-					</a>
+                        <i class="fa fa-envira color-white logo-icon" aria-hidden="true"></i>
+                    </a>
                 </div>
                 <div class="top-icons float-right">
                     <span class="add-task">
-                    	<i class="fa fa-plus color-white"></i>
+                        <i class="fa fa-plus color-white"></i>
                     </span>
                     <span class="complete">
-                    	<i class="fa fa-diamond color-white"></i>
+                        <i class="fa fa-diamond color-white"></i>
                     </span>
                     <span class="remind">
-                    	<i class="fa fa-bell color-white"></i>
+                        <i class="fa fa-bell color-white"></i>
                     </span>
                     <span class="setting">
-                    	<i class="fa fa-gear  fa-fw color-white"></i>
+                        <i class="fa fa-gear  fa-fw color-white"></i>
                     </span>
                 </div>
                 <div class="search">
-                	<div class="search-wrapper">
-                		<span class="search-icon"><i class="fa fa-search place-icon"></i></span>
-                		<input type="text" name="search" placeholder="快速查找">
-                	</div>
+                    <div class="search-wrapper">
+                        <span class="search-icon"><i class="fa fa-search place-icon"></i></span>
+                        <input type="text" name="search" placeholder="快速查找">
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,7 +60,6 @@
                         <div class="project">
                             <span class="project-add"><i class="fa fa-plus"></i></span>
                             <a href="#page_detail" data-toggle="collapse" aria-expanded="false">项目</a>
-                            
                             <ul class="collapse" id="page_detail">
                                 <li>
                                     <div class="single-project">
@@ -86,19 +85,17 @@
                                         <span class="text">杂项</span>
                                     </div>
                                 </li>
-                            </ul>    
+                            </ul>
                         </div>
                         <div class="tags">
                             <span class="tag-add"><i class="fa fa-plus"></i></span>
                             <a href="#tag_detail" data-toggle="collapse" aria-expanded="false">标签</a>
-                            
                             <ul class="collapse" id="tag_detail">
-                            </ul> 
+                            </ul>
                         </div>
                         <div class="filter">
                             <span class="filter-add"><i class="fa fa-plus"></i></span>
                             <a href="#filter_detail" data-toggle="collapse" aria-expanded="false">过滤</a>
-                            
                             <ul class="collapse" id="filter_detail">
                                 <li>
                                     <div class="single-project">
@@ -124,7 +121,7 @@
                                         <span class="text">优先级4</span>
                                     </div>
                                 </li>
-                            </ul> 
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -145,22 +142,43 @@
                             <li><span class="theme-circle color-blue"></span></li>
                             <li><span class="theme-circle color-red"></span></li>
                             <li><span class="theme-circle"></span></li>
-                        </ul>      
+                        </ul>
                     </div>
                 </div>
-                <div class="editor"></div>
+                <div class="editor">
+                    <div class="edit-header">
+                        <a href="#" class="edit-today">今天</a>
+                        <span>星期六 5月12日</span>
+                    </div>
+                    <div class="edit-area">
+                        <div class="input-group date" data-provide="datepicker">
+                            <input type="text" class="form-control">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edit-task-add">
+                        <a href="#"><i class="glyphicon glyphicon-plus"></i>添加任务</a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer">
-            
         </div>
     </div>
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <!-- Bootstrap Js CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Date-Picker Plugin -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
     <!-- Custom Js -->
     <script type="text/javascript" src="js/home.js"></script>
+    <script type="text/javascript">
+    $('.datepicker').datepicker();
+    </script>
 </body>
 
 </html>
