@@ -5,10 +5,68 @@
     <title>TodoList</title>
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.material.mobile.min.css" />
+    <script src="https://kendo.cdn.telerik.com/2018.1.221/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2018.1.221/js/kendo.all.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/home.css">
 </head>
 
 <body>
+    <div class="task-edit">
+        <div class="edit-header">
+            <span class="float-right close"><i class="fa fa-close edit-close"></i></span>
+            <span class="float-right"><i class="fa fa-trash-o"></i></span>
+        </div>
+        <div class="edit-content">
+            <div class="important"><span></span></div>
+            <div class="content">没什么任务</div>
+        </div>
+        <div class="select-important">
+            <div class="important-wrapper">
+                <div class="important-urgen"><span></span></div>
+                <p class="active">重要-紧急</p>
+            </div>
+            <div class="important-wrapper">
+                <div class="important-nurgen"><span></span></div>
+                <p>重要-不紧急</p>
+            </div>
+            <div class="important-wrapper">
+                <div class="nimportant-urgen"><span></span></div>
+                <p>不重要-紧急</p>
+            </div>
+            <div class="important-wrapper">
+                <div class="nimportant-nurgen"><span></span></div>
+                <p>不重要-不紧急</p>
+            </div>
+        </div>
+        <div class="edit-time">
+            <span class="time-icon"><i class="fa fa-clock-o"></i></span>
+            <span>2018-05-17 20:10</span>
+        </div>
+        <div class="edit-reminder">
+            <span class="reminder-icon"><i class="fa fa-bell"></i></span>
+            <span>提前5分钟提醒</span>
+        </div>
+        <div class="edit-project">
+            <span class="project-icon"><i class="fa fa-tasks"></i></span>
+            <span>个人</span>
+        </div>
+        <div class="edit-tags">
+            <div class="tag-icon">
+                <span><i class="fa fa-bookmark"></i></span>
+            </div>
+            <div class="tag-wrapper">
+                <span class="tag">美食</span>
+                <span class="delete">&times;</span>
+            </div>
+            <div class="tag-wrapper">
+                <span class="tag">电影</span>
+                <span class="delete">&times;</span>
+            </div>
+        </div>
+    </div>
     <div class="window">
         <div class="header">
             <div class="header-container">
@@ -151,15 +209,72 @@
                         <span>星期六 5月12日</span>
                     </div>
                     <div class="edit-area">
-                        <div class="input-group date" data-provide="datepicker">
-                            <input type="text" class="form-control">
-                            <div class="input-group-addon">
-                                <span class="glyphicon glyphicon-th"></span>
+                        <div class="area-wrapper">
+                            <div class="edit-task-tag"></div>
+                            <div class="edit-wrapper">
+                                <input type="text" class="edit-input" placeholder="每天读书p3 @目标#个人">
                             </div>
+                        </div>
+                        <input id="datetimepicker" title="datetimepicker" class="edit-time" />
+                    </div>
+                    <div class="task-info">
+                        <div class="task-icon float-right">
+                            <span data-toggle="tooltip" title="项目"><i class="fa fa-book"></i></span>
+                            <span data-toggle="tooltip" title="提醒"><i class="fa fa-clock-o"></i></span>
+                            <span data-toggle="tooltip" title="优先级"><i class="fa fa-flag"></i></span>
+                        </div>
+                        <div class="task-submit">
+                            <a href="#" class="add-btn"><span>添加任务</span></a>
+                            <a href="#" class="cancel">取消</a>
                         </div>
                     </div>
                     <div class="edit-task-add">
                         <a href="#"><i class="glyphicon glyphicon-plus"></i>添加任务</a>
+                    </div>
+                </div>
+                <!-- Timeline -->
+                <div class="timeline-title">
+                    <a href="#">清单时间线</a>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-wrapper">
+                        <div class="task-wrapper">
+                            <div class="count-down float-right">
+                                <canvas></canvas>
+                            </div>
+                            <div class="simple-task">
+                                <div class="task-time">
+                                    <span class="circle float-left"></span>
+                                    <span class="real-time">2018年5月15日 星期二</span>
+                                </div>
+                                <div class="task-info">
+                                    <div class="task-circle float-left">
+                                        <span></span>
+                                    </div>
+                                    <div class="task-content">
+                                        <p class="content-text">没什么任务</p>
+                                        <div class="detail-info">
+                                            <span class="remind-time"><i class="fa fa-bell"></i>2018-05-15 21:55</span>
+                                            <span><i class="fa fa-edit" id="editTask"></i></span>
+                                        </div>
+                                        <div class="detail-tags">
+                                            <span><i class="fa fa-bookmark"></i></span>
+                                            <span class="tag">美食</span>
+                                            <span class="tag">电影</span>
+                                        </div>
+                                        <div class="detail-projects">
+                                            <span class="project"><i class="fa fa-tasks"></i>个人</span>
+                                            <span class="project"><i class="fa fa-tasks"></i>购物</span>
+                                            <span class="project"><i class="fa fa-tasks"></i>工作</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="task-end">
+                            <span class="circle float-left"></span>
+                            <span class="real-time">已加载全部内容</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -168,16 +283,20 @@
         </div>
     </div>
     <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>-->
     <!-- Bootstrap Js CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Bootstrap Date-Picker Plugin -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
     <!-- Custom Js -->
     <script type="text/javascript" src="js/home.js"></script>
+    <script type="text/javascript" src="js/canvas.js"></script>
     <script type="text/javascript">
-    $('.datepicker').datepicker();
+    $(document).ready(function() {
+        // create DateTimePicker from input HTML element
+        $("#datetimepicker").kendoDateTimePicker({
+            value: new Date(),
+            dateInput: true
+        });
+    });
     </script>
 </body>
 

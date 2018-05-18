@@ -25,4 +25,14 @@ const autoPlay = () => {
 	setTimeout(autoPlay, 2000);
 }
 
+$("#editTask").click(function () {
+	$(".main-body").animate({marginLeft : "-268px"}, 1500);
+	$(".task-edit").animate({right : "0"}, 2000);
+});
+
+$(".edit-close").click(function () {
+	$(".task-edit").animate({right : "-425px"}, 1500);
+	$(".main-body").animate({marginLeft : "160px"}, 2000);
+})
+
 autoPlay();

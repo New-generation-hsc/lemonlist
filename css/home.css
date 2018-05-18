@@ -2,6 +2,12 @@ html, body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	width: 100%;
+	/*overflow: hidden;*/
+}
+
+html {
+	overflow-x:hidden;
 }
 
 a, a:hover, a:focus {
@@ -130,6 +136,7 @@ input {
 	margin: 0 0 0 160px;
 	/*border-left: 1px solid rgb(195, 195, 195);*/
 	height: 93vh;
+	width: 1126px;
 }
 
 .left-menu {
@@ -328,4 +335,432 @@ a[aria-expanded="true"]::before {
 
 .edit-task-add a i{
 	margin-right: 12px;
+}
+
+.edit-area {
+	border: 1px solid #ccc;
+	height: 40px;
+	border-radius: 3px;
+	margin: 20px auto;
+}
+
+.area-wrapper {
+	float: left;
+	width: 66%;
+	height: 100%;
+	border-right: 1px solid #ccc;
+}
+
+.edit-wrapper {
+	padding: 8px 8px 8px 12px;
+	width: 96%;
+}
+
+.edit-wrapper .edit-input {
+	font-size: 14px;
+	line-height: 1.25;
+	width: 100%;
+}
+
+.edit-time {
+	box-shadow: none;
+}
+
+input.edit-input::-moz-placeholder {
+	color: rgba(204, 204, 204, 0.8) !important;
+}
+
+input.edit-input::-webkit-input-placeholder {
+	color: rgba(204, 204, 204, 0.8) !important;
+}
+
+.task-info {
+	height: 35px;
+	margin-bottom: 10px;
+}
+
+.task-submit a {
+	margin-top: 5px;
+	padding: 8px;
+}
+
+.task-submit .add-btn {
+	background-color: #383838;
+	color: white;
+	border-radius: 3px;
+}
+
+.task-icon span {
+	margin-right: 10px;
+}
+
+.task-icon span:hover {
+	cursor: pointer;
+}
+
+/** ---------- Timeline ---------- */
+.timeline-title {
+	padding: 15px 0 5px 30px;
+	border-bottom: 1px solid rgba(195, 195, 195, 0.5);
+}
+
+.timeline-title a {
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.timeline {
+	overflow-y: scroll;
+	height: 244px;
+}
+
+.timeline-wrapper {
+	margin-left: 68px;
+	height: 100%;
+	border-left: 1px solid rgba(195, 195, 195, 0.5);
+}
+
+.simple-task {
+	height: 180px;
+}
+
+.simple-task .task-time {
+	padding-top: 10px;
+}
+
+.simple-task .task-time .circle {
+	margin-left: -6px;
+	padding: 0;
+	margin-top: 8px;
+}
+
+.simple-task .task-time .real-time{
+	display: inline-block;
+	padding-top: 5px;
+	color: #999;
+	margin-left: 10px;
+}
+
+.task-info {
+	margin-top: 10px;
+}
+
+.task-circle {
+	padding: 0;
+	margin-left: -10px;
+}
+
+.task-circle span {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+    border-radius: 100%;
+    background-color: #fff;
+    vertical-align: middle;
+    border: 2px solid #48b7e9;
+}
+
+.task-content {
+	margin-left: 16px;
+}
+
+.detail-info {
+	color: #999;
+	height: auto;
+}
+
+.detail-info span {
+	margin-right: 10px;
+}
+
+.detail-info .remind-time i{
+	margin-right: 5px;
+}
+
+.detail-info span i:hover{
+	cursor: pointer;
+}
+
+.detail-tags {
+	margin-top: 10px;
+}
+
+.detail-tags span {
+	display: inline-block;
+	padding-right: 10px;
+	margin-right: 5px;
+}
+
+.detail-tags span i {
+	color: #999;
+}
+
+.detail-tags .tag {
+	padding-left: 10px;
+	background-color: #f8f8f8;
+	border: 1px solid #e8e8e8;
+	border-radius: 2px;
+}
+
+.detail-tags .tag:hover {
+	background-color: #E5F8FE;
+	border-color: #95D8F5;
+}
+
+.detail-projects {
+	color: white;
+	margin-top: 10px;
+}
+
+.detail-projects span {
+	display: inline-block;
+	padding: 4px 10px;
+	background-color: #383838;
+	border-radius: 4px;
+	margin-right: 10px;
+}
+
+.detail-projects span i {
+	margin-right: 4px;
+}
+
+.task-end .circle {
+	margin-left: -6px;
+	padding: 0;
+	margin-top: 8px;
+}
+
+.task-end .real-time {
+	display: inline-block;
+	padding-top: 5px;
+	color: #999;
+	margin-left: 10px;
+}
+
+/* ------------------------Task Edit ------------------------- */
+
+.task-edit {
+	position: absolute;
+	width: 425px;
+	height: 100%;
+	top: 45px;
+	right: -425px;
+	z-index: 666;
+	box-shadow: -2px 0 #ccc;
+}
+
+.edit-header {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	height: 35px;
+}
+
+.edit-header span {
+	display: inline-block;
+	font-size: 15px;
+	border-radius: 100%;
+	padding: 0;
+}
+
+/*
+.edit-header span:hover{
+	background-color: #bcd7b7;
+	cursor: pointer;
+}*/
+
+.edit-header span i {
+	padding: 8px;
+}
+
+.edit-header i.edit-close:hover{
+	color: #fadac9;
+}
+
+.edit-header .edit-delte {
+	margin-right: 20px;
+}
+
+.edit-header .close {
+	margin-right: 20px;
+}
+
+.edit-content {
+	height: 35px;
+	background-color: #fceee9;
+	border-bottom: 1px solid #ccc;
+	margin: 5px 0;
+}
+
+.edit-content .important {
+	float: left;
+	margin: 3px 10px 0 10px;
+}
+
+
+.edit-content .important span {
+	display: inline-block;
+	width: 27px;
+	height: 27px;
+	border-radius: 100%;
+	border: 2px solid #e06e46;
+}
+
+.edit-content .content {
+	padding: 5px 0;
+}
+
+.select-important {
+	height: 35px;
+	border-bottom: 1px solid #ccc;
+}
+
+.important-wrapper {
+	float: left;
+}
+
+.important-wrapper p {
+	display: none;
+	margin: 0;
+	float: right;
+	margin-top: 7px;
+}
+
+.important-wrapper div, .important-wrapper p.active {
+	display: inline-block;
+}
+
+.important-wrapper div {
+	height: 25px;
+	width: 25px;
+	border-radius: 100%;
+	margin: 4px 10px;
+}
+
+.important-wrapper div:hover {
+	cursor: pointer;
+}
+
+.important-wrapper div span {
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+	border-radius: 100%;
+	margin: 5px;
+}
+
+.important-wrapper div.important-urgen {
+	border: 2px solid #d36740;
+}
+
+.important-wrapper div.important-urgen span{
+	background-color: #d36740;
+}
+
+.important-wrapper div.important-nurgen {
+	border: 2px solid #fac96a;
+}
+
+.important-wrapper div.important-nurgen span{
+	background-color: #fac96a;
+}
+
+.important-wrapper div.nimportant-urgen {
+	border: 2px solid #a6dbfc;
+}
+
+.important-wrapper div.nimportant-urgen span{
+	background-color: #a6dbfc;
+}
+
+.important-wrapper div.nimportant-nurgen {
+	border: 2px solid #c9d991;
+}
+
+.important-wrapper div.nimportant-nurgen span{
+	background-color: #c9d991;
+}
+
+.edit-time {
+	height: 35px;
+	margin-top: 5px;
+	border-bottom: 1px solid #ccc;
+}
+
+.edit-time .time-icon {
+	font-size: 20px;
+	margin-left: 12px;
+	margin-right: 10px;
+	color: rgba(204, 204, 204, 0.8);
+}
+
+.edit-reminder {
+	height: 35px;
+	padding: 5px;
+	border-bottom: 1px solid #ccc;
+}
+
+.edit-reminder .reminder-icon {
+	margin-left: 9px;
+	color: rgba(204, 204, 204, 0.8);
+	margin-right: 10px;
+}
+
+.edit-project {
+	height: 35px;
+	padding: 5px;
+	border-bottom: 1px solid #ccc;
+}
+
+.edit-project .project-icon {
+	margin-left: 9px;
+	color: rgba(204, 204, 204, 0.8);
+	margin-right: 10px;
+}
+
+.edit-tags {
+	height: 35px;
+	padding: 5px;
+	border-bottom: 1px solid #ccc;
+}
+
+.edit-tags .tag-icon {
+	float: left;
+	color: rgba(204, 204, 204, 0.8);
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.tag-wrapper {
+	display: inline-block;
+	margin-top: 2px;
+	margin-right: 10px;
+	position: relative;
+}
+
+.tag-wrapper .tag {
+	padding: 4px 15px;
+	background-color: #f8f8f8;
+	border: 1px solid #e8e8e8;
+	border-radius: 2px;
+}
+
+.tag-wrapper .tag:hover {
+	background-color: #E5F8FE;
+	border-color: #95D8F5;
+}
+
+.tag-wrapper .delete {
+	display: inline-block;
+	padding: 0 3px;
+	font-size: 6px;
+	height: 14px;
+	background-color: #e68282d6;
+	position: absolute;
+	top: -5px;
+	left: 50px;
+	border-radius: 100%;
+}
+.tag-wrapper .delete:hover {
+	cursor: pointer;
 }
