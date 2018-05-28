@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.material.mobile.min.css" />
     <script src="https://kendo.cdn.telerik.com/2018.1.221/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2018.1.221/js/kendo.all.min.js"></script>
+    <script type="text/javascript" src="vendor/angularjs/angular.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/home.css">
 </head>
 
-<body>
+<body ng-app="APP" ng-controller="Controller">
     <div class="task-edit">
         <div class="edit-header">
             <span class="float-right close"><i class="fa fa-close edit-close"></i></span>
@@ -212,10 +213,10 @@
                         <div class="area-wrapper">
                             <div class="edit-task-tag"></div>
                             <div class="edit-wrapper">
-                                <input type="text" class="edit-input" placeholder="每天读书p3 @目标#个人">
+                                <input type="text" class="edit-input" placeholder="每天读书p3 @目标#个人" ng-model="task_text">
                             </div>
                         </div>
-                        <input id="datetimepicker" title="datetimepicker" class="edit-time" />
+                        <input id="datetimepicker" title="datetimepicker" class="edit-time" ng-model="datetime" />
                     </div>
                     <div class="task-info">
                         <div class="task-icon float-right">
@@ -224,12 +225,9 @@
                             <span data-toggle="tooltip" title="优先级"><i class="fa fa-flag"></i></span>
                         </div>
                         <div class="task-submit">
-                            <a href="#" class="add-btn"><span>添加任务</span></a>
+                            <a href="#" class="add-btn" ng-click="postTask()"><span>添加任务</span></a>
                             <a href="#" class="cancel">取消</a>
                         </div>
-                    </div>
-                    <div class="edit-task-add">
-                        <a href="#"><i class="glyphicon glyphicon-plus"></i>添加任务</a>
                     </div>
                 </div>
                 <!-- Timeline -->
@@ -238,34 +236,36 @@
                 </div>
                 <div class="timeline">
                     <div class="timeline-wrapper">
-                        <div class="task-wrapper">
-                            <div class="count-down float-right">
-                                <canvas></canvas>
-                            </div>
-                            <div class="simple-task">
-                                <div class="task-time">
-                                    <span class="circle float-left"></span>
-                                    <span class="real-time">2018年5月15日 星期二</span>
+                        <div ng-repeat="task in tasks">
+                            <div class="task-wrapper">
+                                <div class="count-down float-right">
+                                    <canvas></canvas>
                                 </div>
-                                <div class="task-info">
-                                    <div class="task-circle float-left">
-                                        <span></span>
+                                <div class="simple-task">
+                                    <div class="task-time">
+                                        <span class="circle float-left"></span>
+                                        <span class="real-time">{{ task.create_time }}</span>
                                     </div>
-                                    <div class="task-content">
-                                        <p class="content-text">没什么任务</p>
-                                        <div class="detail-info">
-                                            <span class="remind-time"><i class="fa fa-bell"></i>2018-05-15 21:55</span>
-                                            <span><i class="fa fa-edit" id="editTask"></i></span>
+                                    <div class="task-info">
+                                        <div class="task-circle float-left">
+                                            <span></span>
                                         </div>
-                                        <div class="detail-tags">
-                                            <span><i class="fa fa-bookmark"></i></span>
-                                            <span class="tag">美食</span>
-                                            <span class="tag">电影</span>
-                                        </div>
-                                        <div class="detail-projects">
-                                            <span class="project"><i class="fa fa-tasks"></i>个人</span>
-                                            <span class="project"><i class="fa fa-tasks"></i>购物</span>
-                                            <span class="project"><i class="fa fa-tasks"></i>工作</span>
+                                        <div class="task-content">
+                                            <p class="content-text">{{ task.content }}</p>
+                                            <div class="detail-info">
+                                                <span class="remind-time"><i class="fa fa-bell"></i>2018-05-15 21:55</span>
+                                                <span><i class="fa fa-edit" id="editTask" ng-click="editTask()"></i></span>
+                                            </div>
+                                            <div class="detail-tags">
+                                                <span><i class="fa fa-bookmark"></i></span>
+                                                <span class="tag">美食</span>
+                                                <span class="tag">电影</span>
+                                            </div>
+                                            <div class="detail-projects">
+                                                <span class="project"><i class="fa fa-tasks"></i>个人</span>
+                                                <span class="project"><i class="fa fa-tasks"></i>购物</span>
+                                                <span class="project"><i class="fa fa-tasks"></i>工作</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -298,6 +298,7 @@
         });
     });
     </script>
+    <script type="text/javascript" src="js/task.js"></script>
 </body>
 
 </html>

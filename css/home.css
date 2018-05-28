@@ -363,6 +363,7 @@ a[aria-expanded="true"]::before {
 }
 
 .edit-time {
+	margin: 0px;
 	box-shadow: none;
 }
 
@@ -683,7 +684,6 @@ input.edit-input::-webkit-input-placeholder {
 
 .edit-time {
 	height: 35px;
-	margin-top: 5px;
 	border-bottom: 1px solid #ccc;
 }
 
